@@ -4,7 +4,7 @@ My official account: https://github.com/rafaelgalle
 
 # Golden Raspberry API
 
-This project is an API to manage movies nominated and awarded in the Golden Raspberry Awards. It is built using Node.js, TypeScript, Express, and SQLite (H2). The API follows the Richardson Maturity Model level 2 and adheres to principles like SOLID, clean code, clean architecture, DRY, KISS, and 12-factor app.
+This project is an API to manage movies nominated and awarded in the Golden Raspberry Awards.
 
 ## Table of Contents
 
