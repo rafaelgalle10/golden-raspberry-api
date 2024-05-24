@@ -2,6 +2,8 @@ import { openDB } from '../database/connection'
 import { Movie } from '../models/movie'
 import { Result } from '../utils/result'
 
+const PRODUCER_SPLIT_REGEX = process.env.PRODUCER_SPLIT_REGEX || ",| and "
+
 interface interval {
   producer: string
   interval: number
@@ -21,7 +23,7 @@ export async function getProducersWithMaxMinIntervals (): Promise<Result<Produce
   const producerWins: { [producer: string]: number[] } = {}
 
   movies.forEach(movie => {
-    movie.producers.split(',').forEach(producer => {
+    movie.producers.split(new RegExp(PRODUCER_SPLIT_REGEX)).forEach(producer => {
       producer = producer.trim()
       if (!producerWins[producer]) {
         producerWins[producer] = []
